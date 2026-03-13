@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Add Doctor</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="admin-body">
+
+<div class="admin-container">
+
+<h2>Add Doctor</h2>
+
+<form method="POST" class="admin-form">
+
+<label>Name</label>
+<input type="text" name="name" required>
+
+<label>Department</label>
+<input type="text" name="department" required>
+
+<label>Speciality</label>
+<input type="text" name="speciality" required>
+
+<label>Room</label>
+<input type="text" name="room" required>
+
+<label>Days</label>
+<input type="text" name="days" placeholder="Mon-Fri" required>
+
+<label>Time</label>
+<input type="text" name="time" placeholder="10:00-14:00" required>
+<label>Admin Password</label>
+<input type="password" name="admin_pass" required>
+<button type="submit">Add Doctor</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

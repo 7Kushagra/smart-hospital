@@ -1,0 +1,593 @@
+body{
+
+font-family: Arial, sans-serif;
+margin:0;
+background:#f5f7fb;
+
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: url("https://www.transparenttextures.com/patterns/medical.png");
+
+    opacity: 0.15;
+    z-index: -1;
+}
+
+header{
+
+background:#1f4e79;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+
+}
+
+nav a{
+
+color:white;
+margin-left:20px;
+text-decoration:none;
+font-weight:bold;
+
+}
+
+nav a:hover{
+
+color:#ffd700;
+
+}
+
+.hero{
+
+height:70vh;
+background:linear-gradient(135deg,#1f4e79,#4facfe);
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:40px;
+margin-bottom:10px;
+
+}
+
+.buttons{
+
+margin-top:20px;
+
+}
+
+.btn{
+
+background:white;
+color:#1f4e79;
+padding:12px 25px;
+margin:10px;
+border-radius:5px;
+text-decoration:none;
+font-weight:bold;
+
+}
+
+.btn:hover{
+
+background:#ffd700;
+
+}
+
+.features{
+
+display:flex;
+justify-content:center;
+gap:30px;
+padding:40px;
+
+}
+
+.card{
+
+background:white;
+padding:25px;
+width:250px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+text-align:center;
+
+}
+
+table{
+
+width:90%;
+margin:40px auto;
+border-collapse:collapse;
+background:white;
+
+}
+
+th{
+
+background:#1f4e79;
+color:white;
+padding:12px;
+
+}
+
+td{
+
+padding:12px;
+border-bottom:1px solid #ddd;
+
+}
+
+tr:hover{
+
+background:#f1f1f1;
+
+}
+.page-title{
+text-align:center;
+margin-top:30px;
+}
+
+.department-container{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:40px;
+
+}
+
+.department-card{
+
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:0.3s;
+
+}
+
+.department-card:hover{
+
+transform:translateY(-5px);
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+
+}
+
+.department-card h2{
+
+color:#1f4e79;
+margin-bottom:10px;
+
+}
+.admin-btn{
+
+background:#ff5757;
+color:white;
+
+}
+/* LOGIN PAGE */
+
+.login-body{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#1f4e79,#4facfe);
+font-family:Arial;
+
+}
+
+.login-container{
+
+background:white;
+padding:40px;
+border-radius:10px;
+width:350px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+animation:fadeIn 0.7s ease;
+
+}
+
+.login-container h1{
+
+font-size:26px;
+margin-bottom:25px;
+color:#1f4e79;
+
+}
+
+.login-form{
+
+display:flex;
+flex-direction:column;
+gap:15px;
+
+}
+
+.login-form select,
+.login-form input{
+
+padding:12px;
+font-size:16px;
+border-radius:5px;
+border:1px solid #ccc;
+
+}
+
+.login-form button{
+
+padding:12px;
+font-size:16px;
+background:#1f4e79;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+transition:0.3s;
+
+}
+
+.login-form button:hover{
+
+background:#163a5f;
+transform:scale(1.03);
+
+}
+
+/* animation */
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(-20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+/* ADMIN FORM PAGE */
+
+.admin-body{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#1f4e79,#4facfe);
+font-family:Arial;
+
+}
+
+.admin-container{
+
+background:white;
+padding:40px;
+border-radius:10px;
+width:400px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+animation:fadeIn 0.6s ease;
+
+}
+
+.admin-container h2{
+
+text-align:center;
+margin-bottom:25px;
+color:#1f4e79;
+
+}
+
+.admin-form{
+
+display:flex;
+flex-direction:column;
+gap:12px;
+
+}
+
+.admin-form input{
+
+padding:12px;
+border-radius:5px;
+border:1px solid #ccc;
+font-size:15px;
+
+}
+
+.admin-form button{
+
+margin-top:10px;
+padding:12px;
+border:none;
+border-radius:5px;
+background:#1f4e79;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+
+}
+
+.admin-form button:hover{
+
+background:#163a5f;
+transform:scale(1.03);
+
+}
+.filter-box{
+
+display:flex;
+gap:10px;
+margin:20px auto;
+justify-content:center;
+
+}
+
+.filter-box select{
+
+padding:10px;
+font-size:16px;
+
+}
+
+.filter-box button{
+
+padding:10px 20px;
+background:#1f4e79;
+color:white;
+border:none;
+border-radius:5px;
+
+}
+/* CHATBOT POSITION - CENTER RIGHT */
+
+#chatbot{
+position: fixed;
+top: 50%;
+right: 10px;
+transform: translateY(-50%);
+width: 300px;
+height: 380px;
+background: white;
+border-radius: 10px;
+box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+display: flex;
+flex-direction: column;
+overflow: hidden;
+z-index: 9999;
+}
+
+/* CHAT HEADER */
+
+.chat-header{
+background:#2f5d89;
+color:white;
+padding:10px;
+font-weight:bold;
+}
+
+/* CHAT BOX */
+
+#chatbox{
+flex:1;
+padding:10px;
+overflow-y:auto;
+background:#f5f7fb;
+}
+
+/* CHAT INPUT */
+
+.chat-input{
+display:flex;
+border-top:1px solid #ddd;
+}
+
+.chat-input input{
+flex:1;
+border:none;
+padding:10px;
+outline:none;
+}
+
+.chat-input button{
+background:#2f5d89;
+color:white;
+border:none;
+padding:10px 15px;
+cursor:pointer;
+}
+
+
+.dashboard{
+padding:40px;
+text-align:center;
+}
+
+.stats{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:20px;
+}
+
+.stat{
+background:white;
+padding:30px;
+width:200px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.stat:hover{
+transform:translateY(-5px);
+}
+
+.stat h3{
+font-size:32px;
+color:#2f5d89;
+}
+/* FORCE CHATBOT POSITION - CENTER RIGHT */
+
+#chatbot{
+position: fixed !important;
+top: 50% !important;
+right: 20px !important;
+transform: translateY(-50%) !important;
+
+width: 320px;
+height: 400px;
+
+background: white;
+border-radius: 12px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+
+display: flex;
+flex-direction: column;
+
+z-index: 9999;
+}
+#chat-toggle{
+position: fixed !important;
+top: 50% !important;
+right: 360px !important;
+transform: translateY(-50%) !important;
+
+width: 55px;
+height: 55px;
+
+background:#2f5d89;
+color:white;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
+cursor:pointer;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+z-index:10000;
+}
+.page-title{
+text-align:center;
+margin:30px;
+font-size:32px;
+}
+
+.facilities-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+padding:30px;
+}
+
+.facility-card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+text-align:center;
+transition:0.3s;
+}
+
+.facility-card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.facility-card h3{
+color:#2f5d8c;
+margin-bottom:10px;
+}
+
+.facility-card p{
+font-size:15px;
+color:#555;
+}
+.facility-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+padding:30px;
+}
+
+.facility-card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+text-align:center;
+transition:0.3s;
+}
+
+.facility-card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.facility-card h3{
+color:#2f5d8c;
+margin-bottom:10px;
+}
+
+.facility-card p{
+color:#555;
+}
+/* Hospital Background */
+
+html, body{
+    height:100%;
+}
+
+body{
+    background: linear-gradient(135deg,#dbeafe,#eef6ff,#f8fbff) !important;
+    background-attachment: fixed;
+}
+body::after{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:url("https://www.transparenttextures.com/patterns/cubes.png");
+opacity:0.2;
+z-index:-1;
+}
+.view-more-btn{
+display:inline-block;
+padding:10px 22px;
+background:#2f5d8c;
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-weight:500;
+transition:0.3s;
+}
+
+.view-more-btn:hover{
+background:#1f4468;
+}

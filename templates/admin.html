@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Admin Panel</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1>Admin Dashboard</h1>
+<a href="/logout" class="btn">Logout</a>
+<a href="/add_doctor">Add Doctor</a>
+
+<table>
+
+<tr>
+<th>Name</th>
+<th>Department</th>
+<th>Room</th>
+<th>Action</th>
+</tr>
+
+{% for d in doctors %}
+
+<tr>
+<td>{{d.name}}</td>
+<td>{{d.department}}</td>
+<td>{{d.room}}</td>
+
+<td>
+<a href="/delete/{{d.id}}">Delete</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>

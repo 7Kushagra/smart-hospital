@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<h2>Doctors List</h2>
+
+<a href="/add_doctor">Add Doctor</a>
+<form method="GET" class="filter-box">
+
+<select name="department">
+
+<option value="">All Departments</option>
+
+{% for d in departments %}
+<option value="{{d.department}}">
+{{d.department}}
+</option>
+{% endfor %}
+
+</select>
+
+<button type="submit">Filter</button>
+
+</form>
+<table border="1">
+
+<tr>
+<th>Name</th>
+<th>Department</th>
+<th>Speciality</th>
+<th>Room</th>
+<th>Days</th>
+<th>Time</th>
+</tr>
+
+{% for d in doctors %}
+
+<tr>
+<td>{{d.name}}</td>
+<td>{{d.department}}</td>
+<td>{{d.speciality}}</td>
+<td>{{d.room}}</td>
+<td>{{d.days}}</td>
+<td>{{d.time}}</td>
+</tr>
+
+{% endfor %}
+
+</table>

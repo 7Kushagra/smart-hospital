@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Hospital Dashboard</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f3f6fb;
+}
+
+/* NAVBAR */
+
+header{
+background:#2f5d89;
+color:white;
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+/* DASHBOARD */
+
+.dashboard{
+padding:40px;
+}
+
+.stats{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+margin-bottom:40px;
+}
+
+.stat{
+background:white;
+padding:25px;
+width:220px;
+border-radius:8px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.stat h2{
+margin:0;
+color:#2f5d89;
+font-size:32px;
+}
+
+.stat p{
+margin-top:5px;
+}
+
+/* QUICK ACTIONS */
+
+.actions{
+display:flex;
+gap:15px;
+margin-bottom:40px;
+flex-wrap:wrap;
+}
+
+.action-btn{
+background:#2f5d89;
+color:white;
+padding:12px 20px;
+border-radius:6px;
+text-decoration:none;
+}
+
+/* ANNOUNCEMENTS */
+
+.announcement-container{
+margin-bottom:40px;
+}
+
+.announcement-card{
+background:white;
+padding:15px;
+margin-bottom:10px;
+border-left:5px solid #2f5d89;
+border-radius:6px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* DOCTOR TABLE */
+
+.doctor-section{
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+padding:12px;
+border-bottom:1px solid #ddd;
+}
+
+th{
+background:#2f5d89;
+color:white;
+text-align:left;
+}
+
+
+/* CHATBOT */
+
+.chatbot{
+position:fixed;
+top:30%;
+right:20px;
+
+width:250px;
+height:320px;
+
+background:white;
+border-radius:10px;
+box-shadow:0 20px 50px rgba(0,0,0,0.25);
+
+overflow:hidden;
+z-index:999;
+}
+
+.chat-header{
+background:#2f5d89;
+color:white;
+padding:10px;
+font-weight:bold;
+}
+
+#chatbox{
+height:200px;
+overflow-y:auto;
+padding:10px;
+font-size:14px;
+}
+
+.chat-input{
+display:flex;
+border-top:1px solid #ddd;
+}
+
+.chat-input input{
+flex:1;
+border:none;
+padding:10px;
+outline:none;
+}
+
+.chat-input button{
+background:#2f5d89;
+color:white;
+border:none;
+padding:10px 15px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>🏥 Smart Hospital</h2>
+
+<nav>
+<a href="/">Dashboard</a>
+<a href="/doctors">Doctors</a>
+<a href="/departments">Departments</a>
+<a href="/facilities">Facilities</a>
+<a href="/announcements">Announcements</a>
+<a href="?lang=en">EN</a>
+<a href="?lang=hi">हिंदी</a>
+</nav>
+
+</header>
+
+<div class="dashboard">
+
+<h2>Hospital Dashboard / अस्पताल डैशबोर्ड</h2>
+
+<!-- STATS -->
+
+<div class="stats">
+
+<div class="stat">
+<h2>120</h2>
+<p>Total Doctors / कुल डॉक्टर</p>
+</div>
+
+<div class="stat">
+<h2>18</h2>
+<p>Departments / विभाग </p>
+</div>
+
+<div class="stat">
+<h2>60</h2>
+<p>Available Beds / उपलब्ध बेड</p>
+</div>
+
+</div>
+
+
+<!-- ACTION BUTTONS -->
+
+<div class="actions">
+
+<a href="/doctors" class="action-btn">Find Doctor / डॉक्टर खोजें</a>
+<a href="/departments" class="action-btn">Departments / विभाग</a>
+<a href="/emergency" class="action-btn">Emergency / आपातकाल</a>
+
+</div>
+
+
+
+
+
+<!-- DOCTORS TABLE -->
+
+<div class="doctor-section">
+
+<h3>Today's Available Doctors</h3>
+
+<table>
+
+<th>Name / नाम</th>
+<th>Department / विभाग</th>
+<th>Room / कमरा</th>
+<th>Time / समय</th>
+
+<tr>
+<td>Dr Raj Sharma</td>
+<td>Cardiology</td>
+<td>201</td>
+<td>10:00-14:00</td>
+</tr>
+
+<tr>
+<td>Dr Priya Mehta</td>
+<td>Orthopedic</td>
+<td>105</td>
+<td>09:00-13:00</td>
+</tr>
+
+<tr>
+<td>Dr Arjun Singh</td>
+<td>Neurology</td>
+<td>310</td>
+<td>11:00-16:00</td>
+</tr>
+
+<tr>
+<td>Dr Kavita Verma</td>
+<td>Gynecology</td>
+<td>305</td>
+<td>10:00-14:00</td>
+</tr>
+
+</table>
+<div style="text-align:center; margin-top:20px;">
+    <a href="/doctors" class="view-more-btn">
+        View More / और देखें
+    </a>
+</div>
+</div>
+
+</div>
+
+
+<!-- CHATBOT -->
+
+<div class="chatbot">
+
+<div class="chat-header">
+Hospital Assistant
+</div>
+
+<div id="chatbox"></div>
+
+<div class="chat-input">
+
+<input id="chat-input" placeholder="Ask something...">
+
+<button onclick="sendMessage()">Send</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+function sendMessage(){
+
+let input=document.getElementById("chat-input")
+let message=input.value
+
+if(message==="") return
+
+let box=document.getElementById("chatbox")
+
+box.innerHTML += "<p><b>You:</b> "+message+"</p>"
+
+fetch("/chat",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+message:message
+})
+})
+.then(response=>response.json())
+.then(data=>{
+
+box.innerHTML += "<p><b>Bot:</b> "+data.reply+"</p>"
+
+box.scrollTop=box.scrollHeight
+
+})
+
+input.value=""
+
+}
+
+</script>
+
+</body>
+</html>

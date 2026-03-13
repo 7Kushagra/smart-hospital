@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Hospital Portal</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="login-body">
+
+<div class="login-container">
+
+<h1>🏥 Smart Hospital Portal</h1>
+
+<form method="POST" class="login-form">
+
+<label>Select Role</label>
+
+<select name="role" id="role" onchange="togglePassword()">
+<option value="patient">Patient</option>
+<option value="admin">Admin</option>
+</select>
+
+<input type="password" name="password" id="password" placeholder="Admin Password">
+
+<button type="submit">Login</button>
+
+</form>
+
+</div>
+
+<script>
+
+function togglePassword(){
+
+let role = document.getElementById("role").value;
+let pass = document.getElementById("password");
+
+if(role === "admin"){
+pass.style.display = "block";
+}else{
+pass.style.display = "none";
+}
+
+}
+
+togglePassword()
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Hospital Announcements</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<style>
+
+.announcement-container{
+padding:40px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+}
+
+.announcement-card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+.announcement-card h3{
+color:#2c3e50;
+margin-bottom:10px;
+}
+
+.announcement-card p{
+color:#555;
+margin-bottom:10px;
+}
+
+.date{
+font-size:14px;
+color:#888;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>Smart Hospital</h2>
+
+<nav>
+<a href="/">Home</a>
+<a href="/doctors">Doctors</a>
+<a href="/departments">Departments</a>
+<a href="/facilities">Facilities</a>
+<a href="/announcements">Announcements</a>
+</nav>
+
+</header>
+
+
+<h2 style="text-align:center;margin-top:30px;">Hospital Announcements</h2>
+
+
+<div class="announcement-container">
+
+{% for a in announcements %}
+
+<div class="announcement-card">
+
+<h3>{{a.title}}</h3>
+
+<p>{{a.message}}</p>
+
+<div class="date">{{a.date}}</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</body>
+</html>
